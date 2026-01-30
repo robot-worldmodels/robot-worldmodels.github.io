@@ -10,7 +10,7 @@ sudo apt install ruby-full build-essential zlib1g-dev
 sudo gem install bundler
 ```
 
-2 **This avoids permission issues**
+2. **This avoids permission issues**
 ```bash
 echo 'export GEM_HOME="$HOME/.gem"' >> ~/.bashrc
 echo 'export PATH="$HOME/.gem/bin:$PATH"' >> ~/.bashrc
