@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Robot World Models</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="https://simulatingrobotworlds.github.io/images/preview2.png" />
+  <meta name="twitter:image" content="https://simulatingrobotworlds.github.io/images/preview2.png" />
+  <meta name="twitter:card" content="Robot World Models" />
+  <script>
+    /* JavaScript module code here */
+    function localize_time(timeString) {
+      var hours = timeString.split(":")[0].padStart(2, "0");
+      var minutes = timeString.split(":")[1].padStart(2, "0");
+      var datetime = new Date('1970-01-02T' + hours + ":" + minutes + ':00Z');
+      return datetime.getHours() + ":" + datetime.getMinutes().toString().padStart(2, "0");
+    }
+
+    function adjustTimes() {
+      // change timezone abbreviation in table header
+      tz_abbrev = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2];
+      document.querySelectorAll(".timezone-abbrev").forEach(node => node.textContent = tz_abbrev);
+      // change times to local timezone
+      document.querySelectorAll(".time-value").forEach(node => node.textContent = localize_time(node.textContent));
+
+    }
+  </script>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+
+  <div class="container" id="header">
+
+    <div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div> <!-- navbar-header -->
+
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-link"><a href="/index.html">About</a></li>
+        <li class="nav-link"><a href="/submit.html">Call for Papers</a></li>
+<!--        <li class="nav-link"><a href="/format.html">How to Participate</a></li>-->
+<!--        <li class="nav-link"><a href="/livestream.html">&#127909; Livestream</a></li>-->
+        <li class="nav-link"><a href="/schedule.html">Schedule</a></li>
+        <li class="nav-link"><a href="/papers.html">Papers</a></li>
+        <!-- <li class="nav-link"><a href="https://simulatingrobotworlds.github.io">Previous Edition</a></li> -->
+        <!-- <li class="nav-link"><a href="/speakers.html">Invited Speakers</a></li> -->
+        <!-- <li class="nav-link"><a href="/index.html#organizers">Organizers</a></li> -->
+        <!-- <li class="nav-link"><a href="/papers.html">Papers</a></li>  -->
+
+      </ul>
+
+    </div> <!-- navbar-main -->
+
+  </div>
+
+</nav> <!-- navbar -->
+
+<body onload="adjustTimes();">
+
+  <div class="container" id="content">
+
+    <div class="page-content">
+<!-- 
+      <div class="row justify-content-center">
+        <h1 class="text-center">Workshop on Causal and Object-Centric Computer Vision for Robot Learning</h1>
+        <div class="break"></div>
+        <h4 class="text-center">June 17 - 18, <a href="https://iclr.cc/">CVPR 2024</a> Workshop</h4>
+        <div class="break"></div>
+        <hr>
+
+      </div>  -->
+
+      <div class="banner">
+  <video src="images/l2srw2.mp4" class="banner-img" autoplay muted loop playsinline>
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="images/banner.mp4">link to the video</a> instead.</p>
+</video>
+  <div class="banner-text">
+    <h2>Robot World Models</h2>
+    <h4>RSS 2026 Workshop</h4>
+  </div>
+</div>
+<div class="row main-content">
+  <p><b><mark>Call for Papers</mark></b>
+    We are sourcing two different types of papers: four-page papers and one-page abstracts, focusing on robot world models. Specific topics of interest include:
+    <ul>
+      <li>Action-conditioned world models</li>
+      <li>Model-based reinforcement learning and long-horizon planning</li>
+      <li>Differentiable simulation for control and decision-making</li>
+      <li>Learning dynamics and physical interactions from data</li>
+      <li>Sim-to-real transfer and robustness</li>
+      <li>Evaluation of world models in robotics contexts</li>
+    </ul>
+  </p>
+
+  <p><b> Submission Policy: </b></p>
+  <p>
+  <ul>
+    <li>We encourage two types of submissions:
+      <ol>
+        <li><strong>Novel Papers:</strong> 4-page submissions presenting new perspectives or experimental results. Should contain up to 4 pages of main paper plus any number of pages for references and supplementary material.</li>
+        <li><strong>Abstracts from previously published work:</strong> One-page abstracts summarizing work that has already been published or accepted at other venues. The abstract should highlight the main contributions and explain the relevance to the workshop topic. Please also include a link to the online proceedings page for the original publication.</li>
+      </ol>
+    <li>We ask authors to use the supplementary material only for minor details that do not fit in the main paper. We reserve the right to desk reject papers that strongly violate this format (e.g., more than 4 pages of main content before references)</li>
+    <li>4-page submissions should be fully anonymized for double-blind review.</li>
+    <li>Accepted submissions will appear on the workshop website (non-archival).</li>
+  </ul>
+  </p>
+
+  <h3>Important Dates and Links</h3>
+  <p>
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <td>Submission site opens</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Submission deadline (4-page submissions & 1-page abstracts)</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Decisions announced</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Camera-ready due</td>
+      <td>TBD</td>
+    </tr>
+    </tbody>
+    </table>
+  </p>
+</div>
+
+
+
+    </div> <!-- container -->
+
+  </div> <!-- page-content -->
+
+
+  <div class="footnote bg-light">
+    <div class="container">
+      <p>For questions / comments, reach out to: <a href="mailto:	learning-to-simulate-robot-worlds@googlegroups.com">	learning-to-simulate-robot-worlds@googlegroups.com</a></p>
+      <p>Website template adapted from the <a href="https://orlrworkshop.github.io/">ORLR</a>/<a href="https://oolworkshop.github.io/">OOL</a> workshops, originally based on the template of the <a href="https://baicsworkshop.github.io/">BAICS</a> workshop.</p>
+    </div>
+  </div>
+</body>
+</html>
