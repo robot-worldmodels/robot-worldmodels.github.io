@@ -277,9 +277,9 @@ table .time {
 
 .banner-text {
   position: absolute;
-  top: 50%;
-  left: 67%;
-  transform: translate(-50%, -50%);
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.4);
   color: #FFFFFF; /*Ensuring text is white */
   padding: 5px;
@@ -321,9 +321,10 @@ table .time {
     padding: 0px !important;
     max-width: 100% !important;
     background: rgba(0, 0, 0, 0.0) !important;
-    top: 50% !important;
-    left: 65% !important;
-    transform: translate(-30%, -50%) !important;
+    bottom: 5% !important;
+    top: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 
   }
   
