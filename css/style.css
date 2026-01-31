@@ -273,6 +273,7 @@ table .time {
   height: auto;
   display: block; /* Ensures the video covers the full area */
   object-fit: cover; /* Ensures video maintains aspect ratio while covering area */
+  margin: 0 auto; /* Centers the image horizontally */
 }
 
 .banner-text {
