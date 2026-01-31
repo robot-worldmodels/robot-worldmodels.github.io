@@ -305,8 +305,8 @@ table .time {
 }
 
 .main-content {
-  width: 80% !important;
-  margin: 20px 0 20px 5% !important;
+  width: 90% !important;
+  margin: 20px auto !important;
   text-align: left !important;
   padding: 0 !important;
   box-sizing: border-box;
