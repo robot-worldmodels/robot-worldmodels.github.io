@@ -5,8 +5,11 @@
   <meta charset="utf-8">
   <title>Robot World Models</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="https://simulatingrobotworlds.github.io/images/preview.JPG" />
   <meta name="twitter:image" content="https://simulatingrobotworlds.github.io/images/preview.JPG" />
@@ -22,7 +25,7 @@
 
     function adjustTimes() {
       // change timezone abbreviation in table header
-      tz_abbrev = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2];
+      tz_abbrev = new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2];
       document.querySelectorAll(".timezone-abbrev").forEach(node => node.textContent = tz_abbrev);
       // change times to local timezone
       document.querySelectorAll(".time-value").forEach(node => node.textContent = localize_time(node.textContent));
@@ -37,7 +40,8 @@
   <div class="container" id="header">
 
     <div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main"
+        aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div> <!-- navbar-header -->
@@ -46,8 +50,8 @@
       <ul class="navbar-nav mx-auto">
         <li class="nav-link"><a href="/index.html">About</a></li>
         <li class="nav-link"><a href="/submit.html">Call for Papers</a></li>
-<!--        <li class="nav-link"><a href="/format.html">How to Participate</a></li>-->
-<!--        <li class="nav-link"><a href="/livestream.html">&#127909; Livestream</a></li>-->
+        <!--        <li class="nav-link"><a href="/format.html">How to Participate</a></li>-->
+        <!--        <li class="nav-link"><a href="/livestream.html">&#127909; Livestream</a></li>-->
         <li class="nav-link"><a href="/schedule.html">Schedule</a></li>
         <li class="nav-link"><a href="/papers.html">Papers</a></li>
         <!-- <li class="nav-link"><a href="https://simulatingrobotworlds.github.io">Previous Edition</a></li> -->
@@ -68,7 +72,7 @@
   <div class="container" id="content">
 
     <div class="page-content">
-<!-- 
+      <!-- 
       <div class="row justify-content-center">
         <h1 class="text-center">Workshop on Causal and Object-Centric Computer Vision for Robot Learning</h1>
         <div class="break"></div>
@@ -88,9 +92,13 @@
 
   <div class="footnote bg-light">
     <div class="container">
-      <p>For questions / comments, reach out to: <a href="mailto:	learning-to-simulate-robot-worlds@googlegroups.com">	learning-to-simulate-robot-worlds@googlegroups.com</a></p>
-      <p>Website template adapted from the <a href="https://orlrworkshop.github.io/">ORLR</a>/<a href="https://oolworkshop.github.io/">OOL</a> workshops, originally based on the template of the <a href="https://baicsworkshop.github.io/">BAICS</a> workshop.</p>
+      <p>For questions / comments, reach out to: <a href="mailto:	robot-worldmodels@gmail.com">
+          robot-worldmodels@gmail.com</a></p>
+      <p>Website template adapted from the <a href="https://orlrworkshop.github.io/">ORLR</a>/<a
+          href="https://oolworkshop.github.io/">OOL</a> workshops, originally based on the template of the <a
+          href="https://baicsworkshop.github.io/">BAICS</a> workshop.</p>
     </div>
   </div>
 </body>
+
 </html>
