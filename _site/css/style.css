@@ -273,13 +273,14 @@ table .time {
   height: auto;
   display: block; /* Ensures the video covers the full area */
   object-fit: cover; /* Ensures video maintains aspect ratio while covering area */
+  margin: 0 auto; /* Centers the image horizontally */
 }
 
 .banner-text {
   position: absolute;
-  top: 50%;
-  left: 67%;
-  transform: translate(-50%, -50%);
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.4);
   color: #FFFFFF; /*Ensuring text is white */
   padding: 5px;
@@ -305,7 +306,7 @@ table .time {
 
 .main-content {
   width: 80% !important;
-  margin: 20px 0 20px 5% !important;
+  margin: 20px auto !important;
   text-align: left !important;
   padding: 0 !important;
   box-sizing: border-box;
@@ -321,9 +322,10 @@ table .time {
     padding: 0px !important;
     max-width: 100% !important;
     background: rgba(0, 0, 0, 0.0) !important;
-    top: 50% !important;
-    left: 65% !important;
-    transform: translate(-30%, -50%) !important;
+    bottom: 5% !important;
+    top: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 
   }
   

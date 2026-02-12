@@ -13,19 +13,16 @@ layout: coverpage
 <div class="row main-content">
   <div class="break"></div>
   <p>
-    World models have emerged as predictive tools that simulate environment dynamics in a robot’s action space, allowing
-    agents to anticipate the outcomes of their actions. These learned models have become essential for decision-making
-    and long-horizon planning in embodied agents, enabling robots to reason about future states and plan complex
-    behaviors. This workshop brings together an interdisciplinary community spanning generative modeling, model-based
-    reinforcement learning, neural rendering, and differentiable simulation to advance the state of the art in world
-    models for robotics. By focusing on embodied decision-making, we aim to push world models beyond passive prediction
-    towards active, goal-driven interaction and control in both simulated and real environments.
+    Robots, like humans, benefit from imagining the outcome of an action before they take it. In unfamiliar and unstructured environments, this ability depends on world models, internal simulators that allow a robot to anticipate how the world will respond to its actions[<a href="https://arxiv.org/abs/2310.06114">Yang et al., 2024</a>, <a href="https://arxiv.org/abs/2412.14957">Barcellona et al., 2025</a>]. Despite recent advances, existing physics engines and video prediction systems remain limited: they often require labor-intensive manual design or struggle to generate reliable, action-consistent predictions outside narrowly defined settings. Moreover, many current approaches frame world modeling as passive forecasting, predicting future observations without capturing how a robot’s actions causally shape its environment. [<a href="https://openai.com/index/video-generation-models-as-world-simulators/">Brooks et al. 2024</a>]. To unlock more capable planning, control, and policy learning, we need controllable world models that operate directly on a robot’s native actions and enable learning through imagination for reinforcement learning and decision-making.
   </p>
   <p>
-    ... to be updated ...
+    A central challenge is enabling such models to produce coherent, long-horizon predictions under closed-loop control. Early video-based models often struggle when asked to simulate extended action sequences, lacking fine-grained action conditioning and physical consistency. Recent research, therefore, moves toward action-conditioned world models [<a href="https://arxiv.org/abs/2503.10370">Nematollahi et al., 2025</a>, <a href="https://arxiv.org/abs/2510.10125">Guo et al., 2025</a>] that incorporate robot dynamics and sensorimotor interactions, allowing candidate policies to be rolled out and refined within the model itself. By jointly modeling future evolution and the causal effects of actions, these approaches enable robots to safely practice, adapt, and learn in imagination before acting in the real world [<a href="https://arxiv.org/abs/2508.03645">Chandra et al., 2025</a>, <a href="https://dreamzero0.github.io/">Ye et al. 2026</a>, <a href="https://arxiv.org/abs/2512.10675">Gemini Robotics Team, 2025</a>].
   </p>
   <p>
-    ... to be updated ...
+    This workshop brings together researchers at the intersection of perception, control, and learning to advance world models that meaningfully connect sensing and action. To be effective, world models must transform high-dimensional inputs, such as images or language, into internal representations that evolve under a robot’s actions [<a href="https://arxiv.org/abs/2206.14176"></a>Wu et al., 2025</a>]. Progress in this direction increasingly relies on integrating ideas from computer vision, multimodal representation learning, and dynamics modeling, including semantic abstractions [<a href="https://arxiv.org/abs/2503.01584">Sancaktar et al., 2025</a>] and hierarchical structures that support reasoning across multiple temporal scales [<a href="https://openreview.net/forum?id=TjCDNssXKU">Gumbsch et al., 2024</a>]. Together, these advances move us closer to world models that can ground high-level objectives into executable sensorimotor rollouts while retaining physical fidelity.
+    </p>
+    <p>
+    The workshop addresses one of robot learning’s most pressing challenges: enabling world models to generalize across tasks, environments, and embodiments while remaining controllable and grounded in real robot dynamics. It targets researchers and practitioners in robot learning, reinforcement learning, control, computer vision, simulation, and embodied AI, drawing speakers and panelists from both academia and industry. By creating a focused forum to compare emerging approaches and evaluation practices across manipulation, navigation, and long-horizon decision-making, the workshop aims to clarify open challenges and shape a cohesive research agenda to accelerate the deployment of world-model-based learning in real-world robotics.
   </p>
   <p>
     We are sourcing two different types of papers: four-page papers and one-page abstracts, focusing on robot world
@@ -37,12 +34,15 @@ layout: coverpage
   <h2>Topics</h2>
   <div class="break"></div>
   <ul>
-    <li>Action-conditioned world models</li>
-    <li>Model-based reinforcement learning and long-horizon planning</li>
-    <li>Differentiable simulation for control and decision-making</li>
-    <li>Learning dynamics and physical interactions from data</li>
-    <li>Sim-to-real transfer and robustness</li>
-    <li>Evaluation of world models in robotics contexts</li>
+    <li>What makes a world model truly controllable?</li>
+    <li>How should actions and embodiment be represented in world models?</li>
+    <li>Why do world models fail over long imagined horizons?</li>
+    <li>How should perception, language, and control be integrated?</li>
+    <li>What abstractions or hierarchies are needed for long-horizon planning?</li>
+    <li>When does learning or planning inside a world model work in practice?</li>
+    <li>How can world models generalize across tasks, environments, and robots?</li>
+    <li>How should world models be evaluated beyond prediction accuracy?</li>
+    <li>How can uncertainty in imagined rollouts be detected before deployment?</li>
   </ul>
 </div>
 

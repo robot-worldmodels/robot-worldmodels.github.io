@@ -5,11 +5,8 @@
   <meta charset="utf-8">
   <title>Robot World Models</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="https://simulatingrobotworlds.github.io/images/preview.JPG" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -18,7 +15,7 @@
   <meta name="twitter:image" content="https://simulatingrobotworlds.github.io/images/preview.JPG" />
 
   <script>
-
+  
     /* JavaScript module code here */
     function localize_time(timeString) {
       var hours = timeString.split(":")[0].padStart(2, "0");
@@ -29,7 +26,7 @@
 
     function adjustTimes() {
       // change timezone abbreviation in table header
-      tz_abbrev = new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2];
+      tz_abbrev = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2];
       document.querySelectorAll(".timezone-abbrev").forEach(node => node.textContent = tz_abbrev);
       // change times to local timezone
       document.querySelectorAll(".time-value").forEach(node => node.textContent = localize_time(node.textContent));
@@ -44,8 +41,7 @@
   <div class="container" id="header">
 
     <div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main"
-        aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div> <!-- navbar-header -->
@@ -65,7 +61,7 @@
 
     </div> <!-- navbar-main -->
 
-    </div>
+  </div>
 
 </nav> <!-- navbar -->
 
@@ -76,433 +72,324 @@
     <div class="page-content">
 
       <div class="banner">
-        <video src="images/l2srw2.mp4" class="banner-img" autoplay muted loop playsinline>
-          <p>Your browser doesn't support HTML5 video. Here is a <a href="images/banner.mp4">link to the video</a>
-            instead.</p>
-        </video>
-        <div class="banner-text">
-          <h2>Robot World Models</h2>
-          <h4>RSS 2026 Workshop</h4>
-        </div>
+  <img src="images/false-mirror.JPG" class="banner-img" alt="Robot World Models Banner">
+  <div class="banner-text">
+    <h2>Robot World Models</h2>
+    <h4>RSS 2026 Workshop</h4>
+  </div>
+</div>
+
+<div class="row main-content">
+  <div class="break"></div>
+  <p>
+    Robots, like humans, benefit from imagining the outcome of an action before they take it. In unfamiliar and unstructured environments, this ability depends on world models, internal simulators that allow a robot to anticipate how the world will respond to its actions[<a href="https://arxiv.org/abs/2310.06114">Yang et al., 2024</a>, <a href="https://arxiv.org/abs/2412.14957">Barcellona et al., 2025</a>]. Despite recent advances, existing physics engines and video prediction systems remain limited: they often require labor-intensive manual design or struggle to generate reliable, action-consistent predictions outside narrowly defined settings. Moreover, many current approaches frame world modeling as passive forecasting, predicting future observations without capturing how a robot’s actions causally shape its environment. [<a href="https://openai.com/index/video-generation-models-as-world-simulators/">Brooks et al. 2024</a>]. To unlock more capable planning, control, and policy learning, we need controllable world models that operate directly on a robot’s native actions and enable learning through imagination for reinforcement learning and decision-making.
+  </p>
+  <p>
+    A central challenge is enabling such models to produce coherent, long-horizon predictions under closed-loop control. Early video-based models often struggle when asked to simulate extended action sequences, lacking fine-grained action conditioning and physical consistency. Recent research, therefore, moves toward action-conditioned world models [<a href="https://arxiv.org/abs/2503.10370">Nematollahi et al., 2025</a>, <a href="https://arxiv.org/abs/2510.10125">Guo et al., 2025</a>] that incorporate robot dynamics and sensorimotor interactions, allowing candidate policies to be rolled out and refined within the model itself. By jointly modeling future evolution and the causal effects of actions, these approaches enable robots to safely practice, adapt, and learn in imagination before acting in the real world [<a href="https://arxiv.org/abs/2508.03645">Chandra et al., 2025</a>, <a href="https://dreamzero0.github.io/">Ye et al. 2026</a>, <a href="https://arxiv.org/abs/2512.10675">Gemini Robotics Team, 2025</a>].
+  </p>
+  <p>
+    This workshop brings together researchers at the intersection of perception, control, and learning to advance world models that meaningfully connect sensing and action. To be effective, world models must transform high-dimensional inputs, such as images or language, into internal representations that evolve under a robot’s actions [<a href="https://arxiv.org/abs/2206.14176"></a>Wu et al., 2025</a>]. Progress in this direction increasingly relies on integrating ideas from computer vision, multimodal representation learning, and dynamics modeling, including semantic abstractions [<a href="https://arxiv.org/abs/2503.01584">Sancaktar et al., 2025</a>] and hierarchical structures that support reasoning across multiple temporal scales [<a href="https://openreview.net/forum?id=TjCDNssXKU">Gumbsch et al., 2024</a>]. Together, these advances move us closer to world models that can ground high-level objectives into executable sensorimotor rollouts while retaining physical fidelity.
+    </p>
+    <p>
+    The workshop addresses one of robot learning’s most pressing challenges: enabling world models to generalize across tasks, environments, and embodiments while remaining controllable and grounded in real robot dynamics. It targets researchers and practitioners in robot learning, reinforcement learning, control, computer vision, simulation, and embodied AI, drawing speakers and panelists from both academia and industry. By creating a focused forum to compare emerging approaches and evaluation practices across manipulation, navigation, and long-horizon decision-making, the workshop aims to clarify open challenges and shape a cohesive research agenda to accelerate the deployment of world-model-based learning in real-world robotics.
+  </p>
+  <p>
+    We are sourcing two different types of papers: four-page papers and one-page abstracts, focusing on robot world
+    models. Read the <a href="submit.html">submission page</a> for more details.
+  </p>
+</div>
+
+<div class="row main-content">
+  <h2>Topics</h2>
+  <div class="break"></div>
+  <ul>
+    <li>What makes a world model truly controllable?</li>
+    <li>How should actions and embodiment be represented in world models?</li>
+    <li>Why do world models fail over long imagined horizons?</li>
+    <li>How should perception, language, and control be integrated?</li>
+    <li>What abstractions or hierarchies are needed for long-horizon planning?</li>
+    <li>When does learning or planning inside a world model work in practice?</li>
+    <li>How can world models generalize across tasks, environments, and robots?</li>
+    <li>How should world models be evaluated beyond prediction accuracy?</li>
+    <li>How can uncertainty in imagined rollouts be detected before deployment?</li>
+  </ul>
+</div>
+
+
+<div class="row main-content">
+  <p>
+  <h2>Important Dates and Links</h2>
+  <p>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Submission site opens</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td>Submission deadline (4-page submissions & 1-page abstracts)</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td>Decisions announced</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td>Camera-ready due</td>
+        <td>TBD</td>
+      </tr>
+    </tbody>
+  </table>
+  </p>
+</div>
+
+<div id="speakers" class="row main-content">
+  <h2>Speakers and Panelists</h2>
+  <div class="break"></div>
+  <div class="container" style="max-width: 1140px;">
+    <div class="row align-items-start mb-4">
+
+      <div class="col-md-3 text-center">
+        <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
+          alt="TBD">
+        <a href="https://">
+          <h4 class="section-heading">TBD</h4>
+        </a>
+        <h5 class="section-heading"><i>TBD</i></h5>
       </div>
 
-      <div class="row main-content">
-        <div class="break"></div>
-        <p>
-          World models have emerged as predictive tools that simulate environment dynamics in a robot’s action space,
-          allowing agents to anticipate the outcomes of their actions. These learned models have become essential for
-          decision-making and long-horizon planning in embodied agents, enabling robots to reason about future states
-          and plan complex behaviors. This workshop brings together an interdisciplinary community spanning generative
-          modeling, model-based reinforcement learning, neural rendering, and differentiable simulation to advance the
-          state of the art in world models for robotics. By focusing on embodied decision-making, we aim to push world
-          models beyond passive prediction towards active, goal-driven interaction and control in both simulated and
-          real environments.
-        </p>
-        <p>
-          ... to be updated ...
-        </p>
-        <p>
-          ... to be updated ...
-        </p>
-        <p>
-          We are sourcing two different types of papers: four-page papers and one-page abstracts, focusing on robot
-          world models. Read the <a href="submit.html">submission page</a> for more details.
-        </p>
+      <div class="col-md-9">
+        <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.</p>
+
+      </div>
+      <hr>
+
+      <div class="col-md-3 text-center">
+        <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
+          alt="TBD">
+        <a href="https://">
+          <h4 class="section-heading">
+            <center>TBD</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>TBD</i></center>
+        </h5>
       </div>
 
-      <div class="row main-content">
-        <h2>Topics</h2>
-        <div class="break"></div>
-        <ul>
-          <li>Action-conditioned world models</li>
-          <li>Model-based reinforcement learning and long-horizon planning</li>
-          <li>Differentiable simulation for control and decision-making</li>
-          <li>Learning dynamics and physical interactions from data</li>
-          <li>Sim-to-real transfer and robustness</li>
-          <li>Evaluation of world models in robotics contexts</li>
-        </ul>
+      <div class="col-md-9">
+        <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.</p>
+        <p><strong>Talk Title:</strong> TBD</p>
+
+      </div>
+      <hr>
+      <div class="col-md-3 text-center">
+        <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
+          alt="TBD">
+        <a href="https://">
+          <h4 class="section-heading">
+            <center>TBD</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>TBD</i></center>
+        </h5>
       </div>
 
+      <div class="col-md-9">
+        <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.</p>
+        <p><strong>Talk Title:</strong> TBD</p>
 
-      <div class="row main-content">
-        <p>
-        <h2>Important Dates and Links</h2>
-        <p>
-        <table class="table table-striped">
-          <tbody>
-            <tr>
-              <td>Submission site opens</td>
-              <td>TBD</td>
-            </tr>
-            <tr>
-              <td>Submission deadline (4-page submissions & 1-page abstracts)</td>
-              <td>TBD</td>
-            </tr>
-            <tr>
-              <td>Decisions announced</td>
-              <td>TBD</td>
-            </tr>
-            <tr>
-              <td>Camera-ready due</td>
-              <td>TBD</td>
-            </tr>
-          </tbody>
-        </table>
-        </p>
+      </div>
+      <hr>
+
+      <div class="col-md-3 text-center">
+        <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
+          alt="TBD">
+        <a href="https://">
+          <h4 class="section-heading">
+            <center>TBD</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>TBD</i></center>
+        </h5>
       </div>
 
-      <div id="speakers" class="row main-content">
-        <h2>Speakers and Panelists</h2>
-        <div class="break"></div>
-        <div class="container" style="max-width: 1140px;">
-          <div class="row align-items-start mb-4">
-
-            <div class="col-md-3 text-center">
-              <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
-                alt="TBD">
-              <a href="https://">
-                <h4 class="section-heading">TBD</h4>
-              </a>
-              <h5 class="section-heading"><i>TBD</i></h5>
-            </div>
-
-            <div class="col-md-9">
-              <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            </div>
-            <hr>
-
-            <div class="col-md-3 text-center">
-              <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
-                alt="TBD">
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-md-9">
-              <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p><strong>Talk Title:</strong> TBD</p>
-
-            </div>
-            <hr>
-            <div class="col-md-3 text-center">
-              <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
-                alt="TBD">
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-md-9">
-              <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p><strong>Talk Title:</strong> TBD</p>
-
-            </div>
-            <hr>
-
-            <div class="col-md-3 text-center">
-              <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
-                alt="TBD">
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-md-9">
-              <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p><strong>Talk Title:</strong> TBD</p>
-            </div>
-            <hr>
-
-            <div class="col-md-3 text-center">
-              <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
-                alt="TBD">
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-md-9">
-              <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p><strong>Talk Title:</strong> TBD</p>
-
-            </div>
-            <hr>
-            <div class="col-md-3 text-center">
-              <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
-                alt="TBD">
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-md-9">
-              <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p><strong>Talk Title:</strong> TBD</p>
-
-            </div>
-            <hr>
-
-            <div class="col-md-3 text-center">
-              <img class="img-fluid rounded-circle mb-2" height="150" width="150" src="images/speakers/placeholder.jpeg"
-                alt="TBD">
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-md-9">
-              <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p><strong>Talk Title:</strong> TBD</p>
-
-            </div>
-
-          </div>
-        </div>
+      <div class="col-md-9">
+        <p><strong>Short Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.</p>
+        <p><strong>Talk Title:</strong> TBD</p>
       </div>
 
 
-      <div id="organizers" class="row main-content">
-        <h2>Organizers</h2>
-        <div class="break"></div>
-        <div class="container">
-          <div class="row wow fadeInRightBig" data-animation-delay="200">
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
+    </div>
+  </div>
+</div>
 
 
+<div id="organizers" class="row main-content">
+  <h2>Organizers</h2>
+  <div class="break"></div>
+  <div class="container">
+    <div class="row wow fadeInRightBig" data-animation-delay="200">
 
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/nematollahi.jpg" alt="Iman Nematollahi"></center>
+        <a href="https://imanema.com/">
+          <h4 class="section-heading">
+            <center>Iman Nematollahi</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>University of Freiburg</i></center>
+        </h5>
+      </div>
 
-          </div>
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/zadaianchuk.jpg" alt="Andrii Zadaianchuk"></center>
+        <a href="https://zadaianchuk.github.io/">
+          <h4 class="section-heading">
+            <center>Andrii Zadaianchuk</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>University of Amsterdam</i></center>
+        </h5>
+      </div>
 
-          <div class="row wow fadeInRightBig" data-animation-delay="200">
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-          </div>
-
-          <div class="row wow fadeInRightBig" data-animation-delay="200">
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-          </div>
-
-          <div class="row wow fadeInRightBig" data-animation-delay="200">
-
-            <div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-
-            <div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
-              <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
-                  src="images/organizers/placeholder.jpeg" alt="TBD"></center>
-              <a href="https://">
-                <h4 class="section-heading">
-                  <center>TBD</center>
-                </h4>
-              </a>
-              <h5 class="section-heading">
-                <center><i>TBD</i></center>
-              </h5>
-            </div>
-          </div>
-        </div>
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/chandra.png" alt="Akshay L Chandra"></center>
+        <a href="https://akshaychandra.com/">
+          <h4 class="section-heading">
+            <center>Akshay L Chandra</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>University of Freiburg</i></center>
+        </h5>
       </div>
 
     </div>
 
+    <div class="row wow fadeInRightBig" data-animation-delay="200">
 
-  </div> <!-- container -->
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/gumbsch.png" alt="Christian Gumbsch"></center>
+        <a href="https://cgumbsch.github.io/">
+          <h4 class="section-heading">
+            <center>Christian Gumbsch</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>University of Amsterdam</i></center>
+        </h5>
+      </div>
+
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/barcellona.jpg" alt="Leonardo Barcellona"></center>
+        <a href="https://leobarcellona.github.io/">
+          <h4 class="section-heading">
+            <center>Leonardo Barcellona</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>University of Amsterdam</i></center>
+        </h5>
+      </div>
+
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/longhini.png" alt="Alberta Longhini"></center>
+        <a href="https://albilo17.github.io/">
+          <h4 class="section-heading">
+            <center>Alberta Longhini</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>Stanford University</i></center>
+        </h5>
+      </div>
+
+    </div>
+
+    <div class="row wow fadeInRightBig" data-animation-delay="200">
+
+
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/despinoy.JPG" alt="Fabien Despinoy"></center>
+        <a href="https://scholar.google.com/citations?user=0a8l_HUAAAAJ&hl=fr">
+          <h4 class="section-heading">
+            <center>Fabien Despinoy</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>Toyota Motor Europe</i></center>
+        </h5>
+      </div>
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/gavves.jpg" alt="Efstratios Gavves"></center>
+        <a href="https://www.egavves.com/">
+          <h4 class="section-heading">
+            <center>Efstratios Gavves</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>University of Amsterdam</i></center>
+        </h5>
+      </div>
+
+      <div class="col-sm-4 wow fadeInRightBig" data-animation-delay="200">
+        <center><img class="img-responsive img-rounded" style="border-radius: 50%" height="100" width="100"
+            src="images/organizers/valada.jpg" alt="Abhinav Valada"></center>
+        <a href="https://rl.informatik.uni-freiburg.de/people/valada">
+          <h4 class="section-heading">
+            <center>Abhinav Valada</center>
+          </h4>
+        </a>
+        <h5 class="section-heading">
+          <center><i>University of Freiburg</i></center>
+        </h5>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div> <!-- container -->
 
   </div> <!-- page-content -->
 
 
   <div class="footnote bg-light">
     <div class="container">
-      <p>For questions / comments, reach out to: <a href="mailto:	robot-worldmodels@gmail.com">
-          robot-worldmodels@gmail.com</a></p>
-      <p>Website template adapted from the <a href="https://objects-structure-causality.github.io">OSC</a>/<a
-          href="https://orlrworkshop.github.io/">ORLR</a> workshops, originally based on the template of the <a
-          href="https://baicsworkshop.github.io/">BAICS</a> workshop.</p>
+      <p>For questions / comments, reach out to: <a href="mailto:	robot-worldmodels@gmail.com">	robot-worldmodels@gmail.com</a></p>
+      <p>Website template adapted from the <a href="https://objects-structure-causality.github.io">OSC</a>/<a href="https://orlrworkshop.github.io/">ORLR</a> workshops, originally based on the template of the <a href="https://baicsworkshop.github.io/">BAICS</a> workshop.</p>
     </div>
   </div>
 </body>
-
 </html>
