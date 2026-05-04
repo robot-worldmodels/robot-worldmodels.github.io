@@ -263,45 +263,221 @@ table .time {
   }
 }
 
-.banner {
-  position: relative;
-  text-align: center;
+html {
+  background: #ffffff;
 }
 
-.banner-img {
-  width: 90%;
-  height: auto;
-  display: block; /* Ensures the video covers the full area */
-  object-fit: cover; /* Ensures video maintains aspect ratio while covering area */
-  margin: 0 auto; /* Centers the image horizontally */
+body {
+  background: transparent;
+}
+
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/RSS_Banner.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+#navbar {
+  position: relative;
+  z-index: 10;
+}
+
+#content-wrap {
+  position: relative;
+  z-index: 5;
+  background: #ebd3b6;
+  width: 100%;
+}
+
+#content {
+  background: #ffffff;
+}
+
+.footnote {
+  position: relative;
+  z-index: 5;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  background: transparent;
+  z-index: 2;
+}
+
+.hero-heading {
+  text-align: center;
+  padding: 4em 1em 1.5em;
+  background: #ffffff;
+}
+
+.hero-heading h1 {
+  margin-bottom: 0.25em;
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #212529;
+}
+
+.hero-heading h4 {
+  margin-bottom: 0.6em;
+  font-weight: 400;
+  color: #555;
+  font-size: 1.4em;
+}
+
+.hero-heading p {
+  margin-bottom: 0.2em;
+  color: #666;
+  font-size: 1em;
+}
+
+.btn-learn-more {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding: 0.7em 2em;
+  background: #337ab7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-learn-more:hover,
+.btn-learn-more:focus {
+  background: #285e8e;
+  color: #ffffff;
+  outline: none;
+}
+
+.banner-text .btn-learn-more {
+  margin-top: 0.6em;
+  padding: 0.5em 1.4em;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.description-toggle-wrap {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.btn-description-toggle {
+  display: inline-block;
+  padding: 0.5em 1.4em;
+  background: transparent;
+  color: #337ab7;
+  border: 1px solid #337ab7;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-description-toggle:hover,
+.btn-description-toggle:focus {
+  background: #337ab7;
+  color: #ffffff;
+  outline: none;
+}
+
+.description-content {
+  width: 100%;
+  text-align: justify !important;
+  margin-top: 0.8em;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  color: #212529;
+  margin: 0.5em 0 1.2em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.topics-list {
+  column-count: 2;
+  column-gap: 2.5em;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 2.5em;
+}
+
+.topics-list li {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 0.4em;
+}
+
+@media (max-width: 768px) {
+  .topics-list {
+    column-count: 1;
+    -webkit-column-count: 1;
+  }
 }
 
 .banner-text {
   position: absolute;
-  bottom: 5%;
+  bottom: 6%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  color: #FFFFFF; /*Ensuring text is white */
-  padding: 5px;
-  border-radius: 5px; /* Optional: adds rounded corners to the text background */
-  font-size: 1.5em; /* Adjust based on your design */
-  font-weight: bold; /* Makes the font bolder */
-  /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); Adds a shadow to the text */
-  max-width: 90%; /* Ensures text block doesn't span the full width of the image */
-  max-height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #FFFFFF;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  max-width: 80%;
   box-sizing: border-box;
-  font-size: 1.8vw;
   display: block;
+  line-height: 1.2;
 }
 
 .banner-text h1,
 .banner-text h2,
 .banner-text h3 {
-  color: #FFFFFF; /* Ensuring text is white */
-  margin-bottom: 20px; /* Keep or adjust as needed */
-  font-family: Roboto, sans-serif; /* Ensure consistency if needed, or remove if not */
-  font-size: 2.6vw;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  font-family: Roboto, sans-serif;
+  font-size: 2.2vw;
+}
+
+.banner-text h4 {
+  color: #FFFFFF;
+  margin-bottom: 2px;
+  font-family: Roboto, sans-serif;
+  font-size: 1.2vw;
+  font-weight: 500;
+}
+
+.banner-text p {
+  color: #FFFFFF;
+  margin-bottom: 1px;
+  font-family: Roboto, sans-serif;
+  font-size: 0.85vw;
+  font-weight: 400;
+}
+
+.banner-text p:last-child {
+  margin-bottom: 0;
 }
 
 .main-content {
@@ -318,81 +494,107 @@ table .time {
 /* Mobile-specific styles */
 @media (max-width: 768px) {
   .banner-text {
-    font-size: 12px !important;
-    padding: 0px !important;
-    max-width: 100% !important;
-    background: rgba(0, 0, 0, 0.0) !important;
-    bottom: 5% !important;
+    padding: 4px 10px !important;
+    max-width: 92% !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    bottom: 4% !important;
     top: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-
   }
-  
+
   .banner-text h1,
   .banner-text h2,
   .banner-text h3 {
-    font-size: 1.3em !important;
-    margin-bottom: 6px !important;
-    line-height: 1.1 !important;
-  }
-  
-  .banner-text h4 {
-    font-size: 1.0em !important;
-    margin-bottom: 4px !important;
-  }
-  
-  .banner-text p {
-    font-size: 0.85em !important;
+    font-size: 4.2vw !important;
     margin-bottom: 2px !important;
+    line-height: 1.15 !important;
   }
-  
-  .banner-text p:nth-of-type(1) {
+
+  .banner-text h4 {
+    font-size: 2.4vw !important;
     margin-bottom: 1px !important;
   }
-  
-  .banner-text span[role="img"] {
-    font-size: 1.0em !important;
+
+  .banner-text p {
+    font-size: 1.7vw !important;
+    margin-bottom: 1px !important;
   }
-  
+
   .main-content {
     width: 95% !important;
     margin: 20px auto !important;
     padding: 0 10px !important;
   }
-  
-  .banner-img {
-    width: 100% !important;
+
+  .banner {
+    height: 70vh !important;
+  }
+
+  .parallax-bg {
+    background-position: center center;
+  }
+
+  .hero-heading {
+    padding: 2.5em 1em 1em;
+  }
+
+  .hero-heading h1 {
+    font-size: 2em;
+  }
+
+  .hero-heading h4 {
+    font-size: 1.1em;
+  }
+
+  .hero-heading p {
+    font-size: 0.95em;
+  }
+
+  .btn-learn-more {
+    padding: 0.6em 1.6em;
   }
 }
 
 /* Tablet-specific styles */
 @media (min-width: 769px) and (max-width: 1024px) {
   .banner-text {
-    font-size: 14px;
-    padding: 8px;
+    padding: 6px 14px;
   }
-  
+
   .banner-text h1,
   .banner-text h2,
   .banner-text h3 {
-    font-size: 2.2vw;
+    font-size: 2.4vw;
   }
-  
+
+  .banner-text h4 {
+    font-size: 1.4vw;
+  }
+
+  .banner-text p {
+    font-size: 1.0vw;
+  }
+
   .main-content {
     width: 90% !important;
     margin: 20px auto !important;
   }
 }
 
-/* Set a maximum font size for really large screens */
+/* Cap font scaling on very large screens so the title doesn't balloon */
 @media (min-width: 1200px) {
-  .banner-text {
-    font-size: 14px; /* Fixed size for large screens */
-  }
   .banner-text h1,
   .banner-text h2,
   .banner-text h3 {
-    font-size: 2.8em; /* Scales relative to the parent font size */
+    font-size: 28px;
+  }
+
+  .banner-text h4 {
+    font-size: 16px;
+  }
+
+  .banner-text p {
+    font-size: 11px;
   }
 }

@@ -2,29 +2,38 @@
 layout: coverpage
 ---
 
-<div class="banner">
-  <img src="images/false-mirror.JPG" class="banner-img" alt="Robot World Models Banner">
-  <div class="banner-text">
-    <h2>Robot World Models</h2>
-    <h4>RSS 2026 Workshop</h4>
+<div class="row main-content description-section">
+  <div class="break"></div>
+  <div class="description-toggle-wrap">
+    <button type="button" class="btn-description-toggle" onclick="toggleDescription(this)">Click to expand description</button>
+  </div>
+  <div id="desc-content" class="description-content" hidden>
+    <p>
+      Robots, like humans, benefit from imagining the outcome of an action before they take it. In unfamiliar and unstructured environments, this ability depends on world models, which are internal simulators that allow a robot to anticipate how the world will respond to its actions. Existing physics engines and video prediction systems rely on extensive manual design, and struggle to generate reliable, action-consistent predictions outside narrowly defined scenarios. Moreover, many current approaches frame world modeling as passive forecasting, predicting future observations without capturing how a robot’s actions causally shape its environment. This motivates the development of controllable world models that accept a robot’s native actions and support learning through imagination for reinforcement learning, planning, and control. Recent research on action-conditioned world models aim to jointly model future evolution and the causal effects of actions, enabling candidate policies to be rolled out and refined within the model itself. This allows for grounding high-level objectives into executable sensorimotor rollouts while retaining physical fidelity.
+    </p>
+    <p>
+      This workshop brings together researchers at the intersection of perception, control, and learning to advance world models that generalize across tasks, environments, and embodiments while remaining grounded in real robot dynamics. By integrating ideas from computer vision, multimodal representation learning, and dynamics modeling, including semantic abstractions and hierarchical structures across temporal scales. By providing a focused forum to compare emerging approaches and evaluation practices across manipulation, navigation, and long-horizon decision-making, the workshop aims to clarify open challenges and shape a shared research agenda for deployment of world-model-based learning in real-world robotics.
+    </p>
   </div>
 </div>
 
-<div class="row main-content">
-  <div class="break"></div>
-  <p>
-    Robots, like humans, benefit from imagining the outcome of an action before they take it. In unfamiliar and unstructured environments, this ability depends on world models, which are internal simulators that allow a robot to anticipate how the world will respond to its actions. Existing physics engines and video prediction systems rely on extensive manual design, and struggle to generate reliable, action-consistent predictions outside narrowly defined scenarios. Moreover, many current approaches frame world modeling as passive forecasting, predicting future observations without capturing how a robot’s actions causally shape its environment. This motivates the development of controllable world models that accept a robot’s native actions and support learning through imagination for reinforcement learning, planning, and control. Recent research on action-conditioned world models aim to jointly model future evolution and the causal effects of actions, enabling candidate policies to be rolled out and refined within the model itself. This allows for grounding high-level objectives into executable sensorimotor rollouts while retaining physical fidelity.
-  </p>
-  <p>
-    This workshop brings together researchers at the intersection of perception, control, and learning to advance world models that generalize across tasks, environments, and embodiments while remaining grounded in real robot dynamics. By integrating ideas from computer vision, multimodal representation learning, and dynamics modeling, including semantic abstractions and hierarchical structures across temporal scales. By providing a focused forum to compare emerging approaches and evaluation practices across manipulation, navigation, and long-horizon decision-making, the workshop aims to clarify open challenges and shape a shared research agenda for deployment of world-model-based learning in real-world robotics.
-  </p>
-</div>
+<script>
+  function toggleDescription(btn) {
+    var c = document.getElementById('desc-content');
+    if (c.hidden) {
+      c.hidden = false;
+      btn.textContent = 'Click to hide description';
+    } else {
+      c.hidden = true;
+      btn.textContent = 'Click to expand description';
+    }
+  }
+</script>
 
 <div class="row main-content">
   <h2>Topics</h2>
   <div class="break"></div>
-  <ul>
-    <li>What makes a world model truly controllable?</li>
+  <ul class="topics-list">
     <li>How should actions and embodiment be represented in world models?</li>
     <li>Why do world models fail over long imagined horizons?</li>
     <li>How should perception, language, and control be integrated?</li>
@@ -54,15 +63,15 @@ layout: coverpage
     <tbody>
       <tr>
         <td>Submission site opens</td>
-        <td>TBD</td>
+        <td>very soon</td>
       </tr>
       <tr>
         <td>Submission deadline (4-page submissions & 1-page abstracts)</td>
-        <td>TBD</td>
+        <td>June 5, 2026</td>
       </tr>
       <tr>
         <td>Decisions announced</td>
-        <td>TBD</td>
+        <td>June 15, 2026</td>
       </tr>
       <tr>
         <td>Camera-ready due</td>
