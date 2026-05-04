@@ -413,6 +413,12 @@ body {
   border-bottom: 1px solid #e3e3e3;
 }
 
+#speakers h5.section-heading {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.4em;
+}
+
 .topics-list {
   column-count: 2;
   column-gap: 2.5em;
