@@ -545,10 +545,22 @@ body {
     height: 30vh !important;
   }
 
-  #navbar {
+  #navbar,
+  #navbar.bg-light,
+  nav#navbar.bg-light {
     background: transparent !important;
     background-color: transparent !important;
     border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  #navbar .navbar-collapse.show,
+  #navbar .navbar-collapse.collapsing {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.4em 0.6em;
+    border-radius: 0 0 8px 8px;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .parallax-bg {
