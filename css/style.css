@@ -531,6 +531,12 @@ body {
     height: 30vh !important;
   }
 
+  #navbar {
+    background: transparent !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+  }
+
   .parallax-bg {
     background-size: 100% auto !important;
     background-position: center top !important;
