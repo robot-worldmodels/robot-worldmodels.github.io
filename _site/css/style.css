@@ -366,7 +366,7 @@ body {
 .banner-text .btn-learn-more {
   margin-top: 0.6em;
   padding: 0.5em 1.4em;
-  font-size: 13px;
+  font-size: 1.1vw;
   font-weight: 600;
 }
 
@@ -457,14 +457,14 @@ body {
   color: #FFFFFF;
   margin-bottom: 4px;
   font-family: Roboto, sans-serif;
-  font-size: 2.2vw;
+  font-size: 2.6vw;
 }
 
 .banner-text h4 {
   color: #FFFFFF;
   margin-bottom: 2px;
   font-family: Roboto, sans-serif;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
   font-weight: 500;
 }
 
@@ -472,7 +472,7 @@ body {
   color: #FFFFFF;
   margin-bottom: 1px;
   font-family: Roboto, sans-serif;
-  font-size: 0.85vw;
+  font-size: 1.1vw;
   font-weight: 400;
 }
 
@@ -532,7 +532,9 @@ body {
   }
 
   .parallax-bg {
-    background-position: center center;
+    background-size: 100% auto !important;
+    background-position: center top !important;
+    background-color: #ebd3b6;
   }
 
   .hero-heading {
@@ -583,18 +585,22 @@ body {
 }
 
 /* Cap font scaling on very large screens so the title doesn't balloon */
-@media (min-width: 1200px) {
+@media (min-width: 2400px) {
   .banner-text h1,
   .banner-text h2,
   .banner-text h3 {
-    font-size: 28px;
+    font-size: 62px;
   }
 
   .banner-text h4 {
-    font-size: 16px;
+    font-size: 36px;
   }
 
   .banner-text p {
-    font-size: 11px;
+    font-size: 26px;
+  }
+
+  .banner-text .btn-learn-more {
+    font-size: 26px;
   }
 }
