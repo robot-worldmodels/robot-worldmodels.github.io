@@ -498,7 +498,7 @@ body {
     max-width: 92% !important;
     background: rgba(0, 0, 0, 0.55) !important;
     bottom: auto !important;
-    top: 18% !important;
+    top: 5vh !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
@@ -528,7 +528,7 @@ body {
   }
 
   .banner {
-    height: 70vh !important;
+    height: 30vh !important;
   }
 
   .parallax-bg {
