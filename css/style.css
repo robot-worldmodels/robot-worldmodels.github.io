@@ -450,12 +450,20 @@ body {
   height: auto;
 }
 
+.sponsor-logo img[alt="New Theory"] {
+  max-height: 70px;
+}
+
 @media (max-width: 768px) {
   .sponsor-row {
     gap: 1.5em;
   }
   .sponsor-logo img {
     max-height: 60px;
+  }
+
+  .sponsor-logo img[alt="New Theory"] {
+    max-height: 42px;
   }
 }
 
