@@ -18,3 +18,8 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 gem "webrick", "~> 1.7"
+
+# Required for Ruby 4.0+ (these were removed from default gems)
+gem "csv"
+gem "base64"
+gem "logger"
