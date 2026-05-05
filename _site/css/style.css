@@ -451,7 +451,7 @@ body {
 }
 
 .sponsor-logo img[alt="New Theory"] {
-  max-height: 70px;
+  max-height: 58px;
 }
 
 @media (max-width: 768px) {
@@ -463,7 +463,7 @@ body {
   }
 
   .sponsor-logo img[alt="New Theory"] {
-    max-height: 42px;
+    max-height: 35px;
   }
 }
 
