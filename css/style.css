@@ -341,6 +341,38 @@ body {
   font-size: 1em;
 }
 
+.venue {
+  margin: 0.4em auto;
+  line-height: 1.35;
+}
+
+.hero-heading .venue a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.hero-heading .venue a:hover {
+  text-decoration: underline;
+}
+
+.venue .venue-detail {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.banner-text .venue {
+  font-size: 1.2vw;
+}
+
+.banner-text .venue a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.banner-text .venue .venue-detail {
+  font-weight: 400;
+}
+
 .btn-learn-more {
   display: inline-block;
   margin-top: 1.5em;
